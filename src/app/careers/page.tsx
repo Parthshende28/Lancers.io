@@ -169,13 +169,18 @@ export default function CareersPage() {
                   ))}
                 </ul>
               </div>
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full py-2 bg-[var(--primary-accent)]/10 text-[var(--primary-accent)] rounded-lg font-medium text-sm hover:bg-[var(--primary-accent)]/20 transition-all duration-300"
+                href={`mailto:lancersio.offical@gmail.com?subject=${encodeURIComponent(`Application for ${position.title}`)}&body=${encodeURIComponent(
+                  `Hello Lancers Team,\n\nI would like to apply for the ${position.title} position. Please find my resume attached.\n\nThanks,\n`
+                )}`}
+                aria-label={`Apply for ${position.title}`}
+                target='_blank'
+                className="text-center block w-full py-2 bg-[var(--primary-accent)]/10 text-[var(--primary-accent)] rounded-lg font-medium text-sm hover:bg-[var(--primary-accent)]/20 transition-all duration-300"
               >
                 Apply Now
-              </motion.button>
+              </motion.a>
             </motion.div>
           ))}
         </motion.div>
