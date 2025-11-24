@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-        }, 4000); // Change testimonial every 4 seconds
+        }, 5000); // Change testimonial every 4 seconds
 
         return () => clearInterval(interval);
     }, [testimonials.length]);
@@ -81,7 +81,7 @@ export default function TestimonialsSection() {
                         Client <span className="text-[var(--primary-accent)]">Testimonials</span>
                     </h2>
                     <p className="text-xl text-[var(--secondary-text)] max-w-3xl mx-auto">
-                    Don&#39;t just take our word for it. Here&#39;s what our satisfied clients have to say
+                        Don&#39;t just take our word for it. Here&#39;s what our satisfied clients have to say
                         about their experience working with Lancers.io.
                     </p>
                 </motion.div>
@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
 
                                     {/* Testimonial Content */}
                                     <div className="text-center space-y-6 ">
-                                        <p className="text-xl lg:text-2xl text-[var(--secondary-text)] leading-relaxed italic">
+                                        <p className="text-sm md:text-xl lg:text-2xl text-[var(--secondary-text)] leading-relaxed italic">
                                             &ldquo;{testimonials[currentIndex].content}&rdquo;
                                         </p>
 
@@ -156,9 +156,9 @@ export default function TestimonialsSection() {
                         onClick={prevTestimonial}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[var(--surface)] hover:bg-[var(--primary-accent)]/10 text-[var(--primary-accent)] hover:text-[var(--primary-text)] p-3 rounded-full shadow-lg transition-all duration-200 border border-[var(--primary-accent)]/20"
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[var(--surface)] hover:bg-[var(--primary-accent)]/10 text-[var(--primary-accent)] hover:text-[var(--primary-text)] md:p-3 p-1 rounded-full shadow-lg transition-all duration-200 border border-[var(--primary-accent)]/20"
                     >
-                        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="h-4 w-4 md:h-6 md:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                     </motion.button>
@@ -167,9 +167,9 @@ export default function TestimonialsSection() {
                         onClick={nextTestimonial}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[var(--surface)] hover:bg-[var(--primary-accent)]/10 text-[var(--primary-accent)] hover:text-[var(--primary-text)] p-3 rounded-full shadow-lg transition-all duration-200 border border-[var(--primary-accent)]/20"
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[var(--surface)] hover:bg-[var(--primary-accent)]/10 text-[var(--primary-accent)] hover:text-[var(--primary-text)] md:p-3 p-1 rounded-full shadow-lg transition-all duration-200 border border-[var(--primary-accent)]/20"
                     >
-                        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="h-4 w-4 md:h-6 md:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </motion.button>

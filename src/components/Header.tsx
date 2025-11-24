@@ -70,15 +70,15 @@ export default function Header() {
                     {/* Navigation */}
                     <nav className="hidden md:flex items-center space-x-8">
                         {['About', 'Services', 'Portfolio', 'Process', 'Testimonials'].map((item) => (
-                            <motion.button
-                                key={item}
-                                onClick={() => item === 'Home' ? scrollToTop() : scrollToSection(item)}
-                                whileHover={{ y: -2 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-200 font-medium"
-                            >
-                                {item}
-                            </motion.button>
+                            <motion.div key={item} whileHover={{ y: -2 }} whileTap={{ scale: 0.95 }}>
+                                <Link
+                                    href={`/#${item.toLowerCase()}`}
+                                    prefetch
+                                    className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-200 font-medium"
+                                >
+                                    {item}
+                                </Link>
+                            </motion.div>
                         ))}
                         <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.95 }}>
                             <Link
@@ -122,14 +122,16 @@ export default function Header() {
                 <div className="px-4 sm:px-6 lg:px-8 py-3 bg-[var(--surface)]/80 backdrop-blur-md">
                     <div className="flex flex-col space-y-3">
                         {['About', 'Services', 'Portfolio', 'Process', 'Testimonials'].map((item) => (
-                            <motion.button
-                                key={item}
-                                onClick={() => item === 'Home' ? scrollToTop() : scrollToSection(item)}
-                                whileTap={{ scale: 0.98 }}
-                                className="text-left text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-200 font-medium"
-                            >
-                                {item}
-                            </motion.button>
+                            <motion.div key={item} whileTap={{ scale: 0.98 }}>
+                                <Link
+                                    href={`/#${item.toLowerCase()}`}
+                                    prefetch
+                                    className="text-left text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-200 font-medium"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    {item}
+                                </Link>
+                            </motion.div>
                         ))}
                         <motion.div whileTap={{ scale: 0.98 }}>
                             <Link

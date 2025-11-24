@@ -394,8 +394,8 @@ export default function PortfolioSection() {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                             {[
                                 { number: "4+", label: "Projects Delivered" },
-                                { number: "100%", label: "On-Time Delivery" },
                                 { number: "50+", label: "Technologies Used" },
+                                { number: "100%", label: "On-Time Delivery" },
                                 { number: "100%", label: "Client Satisfaction" }
                             ].map((stat, index) => (
                                 <motion.div
@@ -403,10 +403,10 @@ export default function PortfolioSection() {
                                     whileHover={{ scale: 1.05 }}
                                     className="text-center"
                                 >
-                                    <div className="text-4xl font-bold text-[var(--primary-accent)] mb-2">
+                                    <div className="md:text-3xl text-2xl font-bold text-[var(--primary-accent)] mb-2">
                                         {stat.number}
                                     </div>
-                                    <div className="text-[var(--secondary-text)]">
+                                    <div className="text-[var(--secondary-text)] text-sm md:text-base">
                                         {stat.label}
                                     </div>
                                 </motion.div>

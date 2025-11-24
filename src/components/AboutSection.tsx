@@ -154,7 +154,7 @@ export default function AboutSection() {
                         </p>
                         <motion.div
                             variants={itemVariants}
-                            className="mt-8 flex flex-wrap justify-center gap-4"
+                            className="mt-8 grid grid-cols-2 md:grid-cols-4"
                         >
                             {[
                                 { number: "4+", label: "Years Combined Experience" },
@@ -170,7 +170,7 @@ export default function AboutSection() {
                                     <div className="text-2xl font-bold text-[var(--primary-accent)] mb-1">
                                         {stat.number}
                                     </div>
-                                    <div className="text-[var(--secondary-text)] text-sm">
+                                    <div className="text-[var(--secondary-text)] text-sm md:text-base">
                                         {stat.label}
                                     </div>
                                 </motion.div>

@@ -93,10 +93,10 @@ export default function ContactSection() {
                             variants={itemVariants}
                             className="bg-[var(--card-gradient)] pt-0 p-8 rounded-2xl"
                         >
-                            <h3 className="text-2xl font-bold text-[var(--primary-text)] mb-6">
+                            <h3 className="text-center md:text-left text-2xl font-bold text-[var(--primary-text)] mb-6">
                                 Let&#39;s Talk About Your Project
                             </h3>
-                            <p className="text-[var(--secondary-text)] mb-8 leading-relaxed">
+                            <p className="text-center md:text-left text-[var(--secondary-text)] mb-8 leading-relaxed">
                                 We&#39;re excited to hear about your vision and help you create something amazing.
                                 Whether you have a clear idea or just a concept, we&#39;re here to guide you through
                                 the entire process.
@@ -133,7 +133,7 @@ export default function ContactSection() {
                                         <div className="text-2xl mr-4">{contact.icon}</div>
                                         <div>
                                             <h4 className="font-semibold text-[var(--primary-text)]">{contact.title}</h4>
-                                            <p className="text-[var(--primary-accent)] font-medium">{contact.value}</p>
+                                            <p className="text-sm md:text-lg text-[var(--primary-accent)] font-medium">{contact.value}</p>
                                             <p className="text-sm text-[var(--secondary-text)]">{contact.description}</p>
                                         </div>
                                     </motion.div>
