@@ -114,14 +114,14 @@ export default function ContactSection() {
                                     {
                                         icon: "📱",
                                         title: "Call Us",
-                                        value: "+91 9145402183",
+                                        value: "+91 91454 02183 or +91 75838 63776",
                                         description: "Mon-Fri from 9am to 6pm"
                                     },
                                     {
                                         icon: "💬",
                                         title: "WhatsApp",
-                                        value: "+91 9145402183",
-                                        description: "Quick responses guaranteed"
+                                        value: "+91 91454 02183 or +91 75838 63776",
+                                        description: "Quick responses"
                                     }
                                 ].map((contact, index) => (
                                     <motion.div

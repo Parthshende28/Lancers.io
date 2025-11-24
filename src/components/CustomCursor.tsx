@@ -4,11 +4,40 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function CustomCursor() {
+    const [isEnabled, setIsEnabled] = useState(false);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
+    // Enable only on devices with fine pointer (desktops/laptops)
     useEffect(() => {
+        const evaluate = () => {
+            const supportsFinePointer = window.matchMedia('(pointer: fine)').matches && window.matchMedia('(hover: hover)').matches;
+            const isDesktopWidth = window.innerWidth >= 1024; // enable only on laptops/desktops
+            setIsEnabled(supportsFinePointer && isDesktopWidth);
+        };
+        evaluate();
+
+        const handleChange = () => evaluate();
+        const handleResize = () => evaluate();
+
+        // Listen for media query changes (rare but future-proof)
+        const mq1 = window.matchMedia('(pointer: fine)');
+        const mq2 = window.matchMedia('(hover: hover)');
+        mq1.addEventListener?.('change', handleChange);
+        mq2.addEventListener?.('change', handleChange);
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            mq1.removeEventListener?.('change', handleChange);
+            mq2.removeEventListener?.('change', handleChange);
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!isEnabled) return;
+
         const updateMousePosition = (e: MouseEvent) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
             setIsVisible(true);
@@ -17,12 +46,10 @@ export default function CustomCursor() {
         const handleMouseEnter = () => setIsVisible(true);
         const handleMouseLeave = () => setIsVisible(false);
 
-        // Add event listeners
         window.addEventListener('mousemove', updateMousePosition);
         document.addEventListener('mouseenter', handleMouseEnter);
         document.addEventListener('mouseleave', handleMouseLeave);
 
-        // Check for hoverable elements
         const handleMouseOver = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
             const isHoverable = target.matches('button, a, [role="button"], input, textarea, select') ||
@@ -42,9 +69,9 @@ export default function CustomCursor() {
             document.removeEventListener('mouseover', handleMouseOver);
             document.removeEventListener('mouseout', handleMouseOut);
         };
-    }, []);
+    }, [isEnabled]);
 
-    if (!isVisible) return null;
+    if (!isEnabled || !isVisible) return null;
 
     return (
         <>

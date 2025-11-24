@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import planitt from "../../public/images/planitt.png";
 import bhav from "../../public/images/bhav.png";
 import zeynix from "../../public/images/zeynix.png";
@@ -13,8 +13,24 @@ export default function PortfolioSection() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
     const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
 
-    const handleProjectClick = (link: string) => {
+    useEffect(() => {
+        const update = () => setIsMobile(window.innerWidth < 768);
+        update();
+        window.addEventListener('resize', update);
+        return () => window.removeEventListener('resize', update);
+    }, []);
+
+    type ProjectClick = { id: number; link: string };
+    const handleProjectClick = ({ id, link }: ProjectClick) => {
+        if (isMobile) {
+            // Toggle overlay first on mobile for accessibility
+            if (hoveredProject !== id) {
+                setHoveredProject(id);
+                return;
+            }
+        }
         if (link && link !== "#") {
             window.open(link, '_blank', 'noopener,noreferrer');
         }
@@ -122,14 +138,14 @@ export default function PortfolioSection() {
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8"
                 >
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.id}
                             variants={itemVariants}
-                            onClick={() => handleProjectClick(project.link)}
-                            className="group relative h-96 rounded-2xl overflow-hidden cursor-pointer"
+                            onClick={() => handleProjectClick({ id: project.id, link: project.link })}
+                            className="group relative h-80 md:h-96 rounded-2xl overflow-hidden cursor-pointer"
                             onHoverStart={() => setHoveredProject(project.id)}
                             onHoverEnd={() => setHoveredProject(null)}
                         >

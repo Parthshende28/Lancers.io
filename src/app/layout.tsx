@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     description: "Powered by Creativity. Driven by AI. Delivered with Precision.",
     type: "website",
   },
+  icons: {
+    icon: [
+      { url: "/lancers.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({

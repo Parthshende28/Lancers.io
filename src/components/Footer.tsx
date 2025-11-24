@@ -9,21 +9,18 @@ export default function Footer() {
     const footerLinks = {
         company: [
             { name: 'About Us', href: '#about' },
-            { name: 'Our Process', href: '#process' },
-            { name: 'Portfolio', href: '#portfolio' },
-            { name: 'Contact', href: '#contact' }
+            { name: 'Privacy Policy', href: '#privacy' },
+            { name: 'Terms & Conditions', href: '#terms' }
         ],
         services: [
-            { name: 'Web Development', href: '#services' },
-            { name: 'App Development', href: '#services' },
             { name: 'Graphic Design', href: '#services' },
-            { name: 'Sketching', href: '#services' },
+            { name: 'Website Development', href: '#services' },
+            { name: 'Application Development', href: '#services' },
         ],
         resources: [
             { name: 'Blog', href: '#' },
             { name: 'Case Studies', href: '#' },
             { name: 'Documentation', href: '#' },
-            { name: 'Support', href: '#' }
         ]
     };
 
@@ -53,7 +50,7 @@ export default function Footer() {
                                 Lancers.io
                             </span>
                         </div>
-                        <p className="text-[var(--secondary-text)] mb-6 leading-relaxed">
+                        <p className="text-[var(--secondary-text)] mb-2 leading-relaxed">
                             Powered by Creativity. Driven by AI. Delivered with Precision.
                         </p>
                         {/* <div className="flex space-x-4">
@@ -78,16 +75,16 @@ export default function Footer() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                     >
-                        <h3 className="text-lg font-semibold text-[var(--primary-text)] mb-4">
+                        <h3 className="text-lg font-semibold text-[var(--primary-text)] mb-2">
                             Company
                         </h3>
-                        <ul className="space-y-3">
+                        <ul className="space-y-1">
                             {footerLinks.company.map((link, index) => (
                                 <li key={index}>
                                     <motion.a
                                         href={link.href}
                                         whileHover={{ x: 5 }}
-                                        className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-300"
+                                        className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-300 text-sm md:text-m"
                                     >
                                         {link.name}
                                     </motion.a>
@@ -102,16 +99,16 @@ export default function Footer() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <h3 className="text-lg font-semibold text-[var(--primary-text)] mb-4">
+                        <h3 className="text-lg font-semibold text-[var(--primary-text)] mb-2">
                             Services
                         </h3>
-                        <ul className="space-y-3">
+                        <ul className="space-y-1">
                             {footerLinks.services.map((link, index) => (
                                 <li key={index}>
                                     <motion.a
                                         href={link.href}
                                         whileHover={{ x: 5 }}
-                                        className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-300"
+                                        className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-300 text-sm md:text-m"
                                     >
                                         {link.name}
                                     </motion.a>
@@ -126,16 +123,16 @@ export default function Footer() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
-                        <h3 className="text-lg font-semibold text-[var(--primary-text)] mb-4">
+                        <h3 className="text-lg font-semibold text-[var(--primary-text)] mb-2">
                             Resources
                         </h3>
-                        <ul className="space-y-3">
+                        <ul className="space-y-1">
                             {footerLinks.resources.map((link, index) => (
                                 <li key={index}>
                                     <motion.a
                                         href={link.href}
                                         whileHover={{ x: 5 }}
-                                        className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-300"
+                                        className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-300 text-sm md:text-m"
                                     >
                                         {link.name}
                                     </motion.a>
@@ -145,54 +142,12 @@ export default function Footer() {
                     </motion.div>
                 </div>
 
-                {/* Newsletter Signup */}
-                {/* <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="bg-[var(--card-gradient)] p-6 rounded-2xl mb-8"
-                >
-                    <div className="text-center">
-                        <h3 className="text-2xl font-bold text-[var(--primary-text)] mb-2">
-                            Stay Updated
-                        </h3>
-                        <p className="text-[var(--secondary-text)] mb-6">
-                            Get the latest updates on our projects and industry insights
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="flex-1 px-4 py-3 bg-[var(--surface)] border border-[var(--surface)] rounded-lg text-[var(--primary-text)] placeholder-[var(--secondary-text)] focus:border-[var(--primary-accent)] focus:outline-none transition-colors duration-300"
-                            />
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-6 py-3 bg-gradient-to-r from-[var(--primary-accent)] to-[var(--secondary-accent)] text-[var(--background)] rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
-                            >
-                                Subscribe
-                            </motion.button>
-                        </div>
-                    </div>
-                </motion.div> */}
-
                 {/* Bottom Bar */}
                 <HorizontalBar />
-                <div className="flex flex-col md:flex-row justify-between items-center">
-                    <p className="text-[var(--secondary-text)] text-sm mb-4 md:mb-0">
+                <div className="flex flex-col items-center justify-center text-center gap-4">
+                    <p className="text-[var(--secondary-text)] text-sm">
                         © {currentYear} Lancers.io | All rights reserved | Built with ❤️ by Lancers Team.
                     </p>
-                    <div className="flex space-x-6 text-sm">
-                        <a href="#" className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-300">
-                            Privacy Policy
-                        </a>
-                        <a href="#" className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-300">
-                            Terms of Service
-                        </a>
-                        <a href="#" className="text-[var(--secondary-text)] hover:text-[var(--primary-accent)] transition-colors duration-300">
-                            Cookie Policy
-                        </a>
-                    </div>
                 </div>
             </div>
         </footer >
