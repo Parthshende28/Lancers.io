@@ -114,13 +114,15 @@ export default function ContactSection() {
                                     {
                                         icon: "📱",
                                         title: "Call Us",
-                                        value: "+91 91454 02183 or +91 75838 63776",
+                                        value1: "+91 91454 02183",
+                                        value2: "+91 75838 63776",
                                         description: "Mon-Fri from 9am to 6pm"
                                     },
                                     {
                                         icon: "💬",
                                         title: "WhatsApp",
-                                        value: "+91 91454 02183 or +91 75838 63776",
+                                        value1: "+91 91454 02183",
+                                        value2: "+91 75838 63776",
                                         description: "Quick responses"
                                     }
                                 ].map((contact, index) => (
@@ -131,9 +133,13 @@ export default function ContactSection() {
                                         className="flex items-center p-4 bg-[var(--surface)]/50 rounded-lg hover:bg-[var(--surface)]/80 transition-colors duration-300"
                                     >
                                         <div className="text-2xl mr-4">{contact.icon}</div>
-                                        <div>
+                                        <div className='space-y-1'>
                                             <h4 className="font-semibold text-[var(--primary-text)]">{contact.title}</h4>
                                             <p className="text-sm md:text-lg text-[var(--primary-accent)] font-medium">{contact.value}</p>
+                                            <div className='md:flex md:flex-col-2 md:gap-4 space-y-1'>
+                                                <p className="text-sm md:text-lg text-[var(--primary-accent)] font-medium">{contact.value1}</p>
+                                                <p className="text-sm md:text-lg text-[var(--primary-accent)] font-medium">{contact.value2}</p>
+                                            </div>
                                             <p className="text-sm text-[var(--secondary-text)]">{contact.description}</p>
                                         </div>
                                     </motion.div>
