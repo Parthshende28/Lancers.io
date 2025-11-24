@@ -3,9 +3,12 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+type PlanType = 'website' | 'app' | 'both';
+type ComplexityType = 'basic' | 'intermediate' | 'advanced';
+
 export default function QuotePage() {
-    const [selectedPlan, setSelectedPlan] = useState<'website' | 'app' | 'both'>('website');
-    const [complexity, setComplexity] = useState<'basic' | 'intermediate' | 'advanced'>('basic');
+    const [selectedPlan, setSelectedPlan] = useState<PlanType>('website');
+    const [complexity, setComplexity] = useState<ComplexityType>('basic');
     const [additionalServices, setAdditionalServices] = useState<string[]>([]);
 
     const basePrice = 60000;
@@ -75,7 +78,7 @@ export default function QuotePage() {
                         Get Your <span className="text-[var(--primary-accent)]">Custom Quote</span>
                     </h2>
                     <p className="text-xl text-[var(--secondary-text)] max-w-3xl mx-auto mb-8">
-        Let&#39;s build something extraordinary together. Our transparent pricing ensures you get exactly what you need,
+                        Let&#39;s build something extraordinary together. Our transparent pricing ensures you get exactly what you need,
                         when you need it, with no hidden surprises.
                     </p>
                     <div className="inline-block bg-[var(--primary-accent)]/10 border border-[var(--primary-accent)]/30 rounded-full px-6 py-3">
@@ -96,14 +99,14 @@ export default function QuotePage() {
                         What are you looking to build?
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {[
+                        {([
                             { id: 'website', title: 'Website Development', desc: 'Professional websites with modern design', icon: '🌐' },
                             { id: 'app', title: 'App Development', desc: 'Mobile and web applications', icon: '📱' },
                             { id: 'both', title: 'Full-Stack Solution', desc: 'Complete digital ecosystem', icon: '⚡' }
-                        ].map((option) => (
+                        ] as Array<{ id: PlanType; title: string; desc: string; icon: string }>).map((option) => (
                             <motion.button
                                 key={option.id}
-                                onClick={() => setSelectedPlan(option.id as any)}
+                                onClick={() => setSelectedPlan(option.id)}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 className={`p-6 rounded-2xl border-2 transition-all duration-300 ${selectedPlan === option.id
@@ -130,7 +133,7 @@ export default function QuotePage() {
                         Project Complexity
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {[
+                        {([
                             {
                                 id: 'basic',
                                 title: 'Basic',
@@ -152,10 +155,10 @@ export default function QuotePage() {
                                 features: ['AI Integration', 'Real-time Features', 'Complex Backend'],
                                 multiplier: '2.2x'
                             }
-                        ].map((option) => (
+                        ] as Array<{ id: ComplexityType; title: string; desc: string; features: string[]; multiplier: string }>).map((option) => (
                             <motion.button
                                 key={option.id}
-                                onClick={() => setComplexity(option.id as any)}
+                                onClick={() => setComplexity(option.id)}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 className={`p-6 rounded-2xl border-2 transition-all duration-300 ${complexity === option.id
@@ -333,7 +336,7 @@ export default function QuotePage() {
                                 <h4 className="text-lg font-bold text-[var(--primary-text)] mb-3">📋 Project Scope</h4>
                                 <p className="text-[var(--secondary-text)]">
                                     The quoted price includes complete development with backend and database integration.
-        Hosting and publishing services are included, but you&#39;ll need to purchase the domain
+                                    Hosting and publishing services are included, but you&#39;ll need to purchase the domain
                                     or app store subscriptions separately.
                                 </p>
                             </div>
@@ -374,7 +377,7 @@ export default function QuotePage() {
                         Ready to Start Your Project?
                     </h3>
                     <p className="text-xl text-[var(--secondary-text)] mb-8 max-w-2xl mx-auto">
-        Let&#39;s discuss your requirements and create something amazing together.
+                        Let&#39;s discuss your requirements and create something amazing together.
                         Our team is ready to bring your vision to life.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
