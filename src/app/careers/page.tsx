@@ -126,7 +126,7 @@ export default function CareersPage() {
             variants={itemVariants}
             className="text-xl text-[var(--secondary-text)] max-w-3xl mx-auto"
           >
-            We're always looking for talented individuals to join our creative team
+            We&#39;re always looking for talented individuals to join our creative team
           </motion.p>
         </motion.div>
 
@@ -243,13 +243,13 @@ export default function CareersPage() {
             variants={itemVariants}
             className="text-2xl font-bold text-[var(--primary-text)] mb-4"
           >
-            Don't see a position that fits?
+            Don&#39;t see a position that fits?
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="text-[var(--secondary-text)] mb-6 max-w-2xl mx-auto"
           >
-            We're always interested in connecting with talented individuals. Send us your resume and let us know how you can contribute to our team.
+            We&#39;re always interested in connecting with talented individuals. Send us your resume and let us know how you can contribute to our team.
           </motion.p>
           <motion.a
             variants={itemVariants}

@@ -81,7 +81,7 @@ export default function TestimonialsSection() {
                         Client <span className="text-[var(--primary-accent)]">Testimonials</span>
                     </h2>
                     <p className="text-xl text-[var(--secondary-text)] max-w-3xl mx-auto">
-                        Don't just take our word for it. Here's what our satisfied clients have to say
+                    Don&#39;t just take our word for it. Here&#39;s what our satisfied clients have to say
                         about their experience working with Lancers.io.
                     </p>
                 </motion.div>

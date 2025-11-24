@@ -204,7 +204,7 @@ export default function ServicesSection() {
                             Ready to Start Your Project?
                         </h3>
                         <p className="text-lg text-[var(--secondary-text)] mb-8 max-w-2xl mx-auto">
-                            Let's discuss your requirements and create something amazing together
+                            Let&#39;s discuss your requirements and create something amazing together
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <motion.button

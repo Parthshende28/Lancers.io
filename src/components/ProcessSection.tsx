@@ -198,7 +198,7 @@ export default function ProcessSection() {
                             {[
                                 {
                                     title: "Transparent Communication",
-                                    description: "Regular updates and open communication channels ensure you're always informed about project progress.",
+                                    description: "Regular updates and open communication channels ensure you&#39;re always informed about project progress.",
                                     icon: "💬"
                                 },
                                 {
@@ -246,7 +246,7 @@ export default function ProcessSection() {
                             Ready to Start Your Journey?
                         </h3>
                         <p className="text-lg mb-5 max-w-2xl mx-auto">
-                            Let's discuss your project & see how our process can bring your vision to life
+                            Let&#39;s discuss your project & see how our process can bring your vision to life
                         </p>
                         <motion.button
                             onClick={() => scrollToSection('contact')}

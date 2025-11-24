@@ -75,7 +75,7 @@ export default function QuotePage() {
                         Get Your <span className="text-[var(--primary-accent)]">Custom Quote</span>
                     </h2>
                     <p className="text-xl text-[var(--secondary-text)] max-w-3xl mx-auto mb-8">
-                        Let's build something extraordinary together. Our transparent pricing ensures you get exactly what you need,
+        Let&#39;s build something extraordinary together. Our transparent pricing ensures you get exactly what you need,
                         when you need it, with no hidden surprises.
                     </p>
                     <div className="inline-block bg-[var(--primary-accent)]/10 border border-[var(--primary-accent)]/30 rounded-full px-6 py-3">
@@ -333,7 +333,7 @@ export default function QuotePage() {
                                 <h4 className="text-lg font-bold text-[var(--primary-text)] mb-3">📋 Project Scope</h4>
                                 <p className="text-[var(--secondary-text)]">
                                     The quoted price includes complete development with backend and database integration.
-                                    Hosting and publishing services are included, but you'll need to purchase the domain
+        Hosting and publishing services are included, but you&#39;ll need to purchase the domain
                                     or app store subscriptions separately.
                                 </p>
                             </div>
@@ -374,7 +374,7 @@ export default function QuotePage() {
                         Ready to Start Your Project?
                     </h3>
                     <p className="text-xl text-[var(--secondary-text)] mb-8 max-w-2xl mx-auto">
-                        Let's discuss your requirements and create something amazing together.
+        Let&#39;s discuss your requirements and create something amazing together.
                         Our team is ready to bring your vision to life.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
