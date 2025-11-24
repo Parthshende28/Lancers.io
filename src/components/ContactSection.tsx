@@ -77,7 +77,7 @@ export default function ContactSection() {
                         variants={itemVariants}
                         className="text-xl text-[var(--secondary-text)] max-w-3xl mx-auto"
                     >
-                    Ready to bring your ideas to life? Let&#39;s start a conversation about your next project.
+                        Ready to bring your ideas to life? Let&#39;s start a conversation about your next project.
                     </motion.div>
                 </motion.div>
 
@@ -94,11 +94,11 @@ export default function ContactSection() {
                             className="bg-[var(--card-gradient)] pt-0 p-8 rounded-2xl"
                         >
                             <h3 className="text-2xl font-bold text-[var(--primary-text)] mb-6">
-                    Let&#39;s Talk About Your Project
+                                Let&#39;s Talk About Your Project
                             </h3>
                             <p className="text-[var(--secondary-text)] mb-8 leading-relaxed">
-                    We&#39;re excited to hear about your vision and help you create something amazing.
-                    Whether you have a clear idea or just a concept, we&#39;re here to guide you through
+                                We&#39;re excited to hear about your vision and help you create something amazing.
+                                Whether you have a clear idea or just a concept, we&#39;re here to guide you through
                                 the entire process.
                             </p>
 
@@ -108,19 +108,19 @@ export default function ContactSection() {
                                     {
                                         icon: "📧",
                                         title: "Email Us",
-                                        value: "hello@lancers.io",
+                                        value: "lancersio.official@gmail.com",
                                         description: "Send us an email anytime"
                                     },
                                     {
                                         icon: "📱",
                                         title: "Call Us",
-                                        value: "+1 (555) 123-4567",
+                                        value: "+91 9145402183",
                                         description: "Mon-Fri from 9am to 6pm"
                                     },
                                     {
                                         icon: "💬",
                                         title: "WhatsApp",
-                                        value: "+1 (555) 123-4567",
+                                        value: "+91 9145402183",
                                         description: "Quick responses guaranteed"
                                     }
                                 ].map((contact, index) => (

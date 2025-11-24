@@ -1,5 +1,7 @@
 'use client';
 
+import ContactSection from '@/components/ContactSection';
+import HorizontalBar from '@/components/HorizontalBar';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
@@ -44,29 +46,8 @@ export default function QuotePage() {
 
     return (
         <div className="min-h-screen bg-[var(--background)] text-[var(--primary-text)]">
-            {/* Header */}
-            <motion.header
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="bg-[var(--surface)] border-b border-[var(--primary-accent)]/20 py-6"
-            >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-3">
-                            <div className="w-10 h-10 bg-[var(--primary-accent)] rounded-lg flex items-center justify-center">
-                                <span className="text-[var(--background)] font-bold text-xl">L</span>
-                            </div>
-                            <h1 className="text-2xl font-bold text-[var(--primary-text)]">Lancers.io</h1>
-                        </div>
-                        <div className="text-[var(--secondary-text)]">
-                            Custom Development Quote
-                        </div>
-                    </div>
-                </div>
-            </motion.header>
 
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-38">
                 {/* Hero Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -398,21 +379,8 @@ export default function QuotePage() {
                     </div>
                 </motion.div>
             </main>
-
-            {/* Footer */}
-            <motion.footer
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1 }}
-                className="bg-[var(--surface)] border-t border-[var(--primary-accent)]/20 py-8 mt-16"
-            >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <p className="text-[var(--secondary-text)]">
-                        © 2024 Lancers.io. All rights reserved. |
-                        <span className="text-[var(--primary-accent)] ml-2">Powered by Creativity. Driven by AI. Delivered with Precision.</span>
-                    </p>
-                </div>
-            </motion.footer>
+            <HorizontalBar />
+            <ContactSection />
         </div>
     );
 }
